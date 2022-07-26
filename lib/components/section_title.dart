@@ -8,7 +8,7 @@ class SectionTitle extends StatelessWidget {
     required this.title,
     required this.subTitle,
     required this.color,
-  }): super(key: key);
+  }) : super(key: key);
 
   final String title, subTitle;
   final Color color;
@@ -17,7 +17,7 @@ class SectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: kDefaultPadding),
-      constraints: const BoxConstraints(maxWidth: 1110),
+      constraints: const BoxConstraints(maxWidth: double.infinity * 0.9),
       height: 100,
       child: Row(
         children: [

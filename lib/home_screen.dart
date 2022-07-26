@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants.dart';
 import './sections/topSection/top_section.dart';
 import 'sections/about/about_section.dart';
+import 'sections/recent_work/recent_work_section.dart';
 import 'sections/service/service_section.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
             TopSection(),
             AboutSection(),
             ServiceSection(),
-            // RecentWorkSection(),
+            RecentWorkSection(),
             // FeedbackSection(),
             // SizedBox(height: kDefaultPadding),
             // ContactSection(),

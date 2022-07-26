@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/responsiveness.dart';
 import '../../../models/services.dart';
 
 import '../../../constants.dart';
@@ -20,6 +21,7 @@ class ServiceCardState extends State<ServiceCard> {
   Duration duration = const Duration(milliseconds: 200);
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return InkWell(
       onTap: () {},
       onHover: (value) {
@@ -30,9 +32,8 @@ class ServiceCardState extends State<ServiceCard> {
       hoverColor: Colors.transparent,
       child: AnimatedContainer(
         duration: duration,
-        margin: const EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
-        height: 256,
-        width: 256,
+        height: ResponsiveWidget.isMobile(context) ? size.width * 0.3 : 256,
+        width: ResponsiveWidget.isMobile(context) ? size.width * 0.3 : 256,
         decoration: BoxDecoration(
           color: services[widget.index].color,
           borderRadius: BorderRadius.circular(10),
@@ -43,9 +44,11 @@ class ServiceCardState extends State<ServiceCard> {
           children: [
             AnimatedContainer(
               duration: duration,
-              padding: const EdgeInsets.all(kDefaultPadding * 1.5),
-              height: 120,
-              width: 120,
+              //padding: const EdgeInsets.all(kDefaultPadding * 1.5),
+              height:
+                  ResponsiveWidget.isMobile(context) ? size.width * 0.15 : 120,
+              width:
+                  ResponsiveWidget.isMobile(context) ? size.width * 0.15 : 120,
               decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
@@ -63,10 +66,14 @@ class ServiceCardState extends State<ServiceCard> {
                 fit: BoxFit.fill,
               ),
             ),
-            const SizedBox(height: kDefaultPadding),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
             Text(
               services[widget.index].title,
-              style: const TextStyle(fontSize: 22),
+              style: TextStyle(
+                fontSize: size.height * 0.02,
+              ),
             ),
           ],
         ),
