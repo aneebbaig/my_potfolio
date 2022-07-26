@@ -8,7 +8,7 @@ class MyOutlineButton extends StatelessWidget {
     required this.imageSrc,
     required this.text,
     required this.press,
-  }): super(key: key);
+  }) : super(key: key);
 
   final String imageSrc, text;
   final VoidCallback press;
@@ -18,10 +18,10 @@ class MyOutlineButton extends StatelessWidget {
     return FittedBox(
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(
-            vertical: kDefaultPadding,
-            horizontal: kDefaultPadding * 2.5,
-          ),
+          // padding: const EdgeInsets.symmetric(
+          //   vertical: kDefaultPadding,
+          //   horizontal: kDefaultPadding * 2.5,
+          // ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
             side: const BorderSide(color: Color(0xFFEDEDED)),
@@ -32,7 +32,6 @@ class MyOutlineButton extends StatelessWidget {
           children: [
             Image.asset(
               imageSrc,
-              height: 40,
             ),
             const SizedBox(width: kDefaultPadding),
             Text(text)

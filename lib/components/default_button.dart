@@ -8,7 +8,7 @@ class DefaultButton extends StatelessWidget {
     required this.imageSrc,
     required this.text,
     required this.press,
-  }): super(key: key);
+  }) : super(key: key);
 
   final String imageSrc, text;
   final VoidCallback press;
@@ -27,8 +27,7 @@ class DefaultButton extends StatelessWidget {
       onPressed: press,
       child: Row(
         children: [
-          Image.asset(imageSrc, height: 40),
-          const SizedBox(width: kDefaultPadding),
+          Image.asset(imageSrc),
           Text(text),
         ],
       ),
